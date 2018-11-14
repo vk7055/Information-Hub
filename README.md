@@ -6,4 +6,5 @@ Developed a website for
 4. Resource Sharing
 
 •	Tools Used : C#, ASP.NET, HTML, etc.
+
 •	Served as the team manager of the team

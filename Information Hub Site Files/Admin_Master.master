@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin_Master.master.cs" Inherits="Admin_Master" %>
+
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style3 {
+            text-align: center;
+            font-size: xx-large;
+            background-color: #388DAD;
+        }
+        .auto-style4 {
+            height: 28px;
+        }
+
+        .auto-style5 {
+            width: 553px;
+        }
+
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server" >
+    <div>
+    </div>
+        <table class="auto-style1" style="background:linear-gradient(90deg,white,white)">
+            <tr>
+                <td class="auto-style3" colspan="2" style="background:linear-gradient(90deg,white)"><strong style="color: #FFFFFF">Welcome</strong></td>
+            </tr>
+            <tr>
+                <td class="auto-style3" colspan="2" style="color: #FFFFFF;">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center" colspan="2" style="background-color: #F0F0F0;">
+                    <br />
+                    <asp:Panel ID="Panel1" runat="server" Height="50px">
+                        <table class="nav-justified">
+                            <tr>
+                                <td class="auto-style5">
+                                    <asp:Menu ID="NavigationMenu" runat="server" BackColor="#F0F0F0" CssClass="btn" Font-Names="Verdana" Font-Size="0.8em" ForeColor="White" OnMenuItemClick="NavigationMenu_MenuItemClick" orientation="Horizontal" staticdisplaylevels="1" staticsubmenuindent="40px" style="font-size: small; background-color: #388DAD" target="_self">
+                                        <dynamichoverstyle backcolor="#DBDBDB" Font-Size="Medium" forecolor="#337AB7" />
+                                        <DynamicMenuItemStyle BackColor="#E8E8E8" Font-Size="Medium" ForeColor="#0099FF" HorizontalPadding="10px" VerticalPadding="10px" />
+                                        <DynamicMenuStyle BackColor="#B5C7DE" />
+                                        <DynamicSelectedStyle BackColor="#507CD1" />
+                                        <items>
+                                            <asp:menuitem navigateurl="Admin_Home.aspx" text="Home" tooltip="Home">
+                                                <asp:menuitem navigateurl="Admin_Notice.aspx" text="Notices" tooltip="Notices" />
+                                                <asp:menuitem navigateurl="Admin_Pwd_Reset.aspx" text="Reset Password" tooltip="Reset Password" />
+                                            </asp:menuitem>
+                                            <asp:menuitem navigateurl="Admin_Employee.aspx" text="Employee" tooltip="Employee">
+                                                <asp:menuitem navigateurl="Admin_Employee_Add.aspx" text="Add Employee" tooltip="Add Employee" />
+                                                <asp:menuitem navigateurl="Admin_Show_Employee.aspx" text="View Employee" tooltip="View Employee" />
+                                                <asp:menuitem navigateurl="Admin_View_Employee.aspx" text="Update Employee" tooltip="Update Employee" />
+                                                <asp:menuitem navigateurl="Admin_Faculty_Group.aspx" text="Assign Group" tooltip="Assign Group" />
+                                                <asp:menuitem navigateurl="Admin_View_Leaves.aspx" text="View Leaves" tooltip="View Leaves" />
+                                                <asp:menuitem navigateurl="Admin_Add_Leaves.aspx" text="Add Leaves" tooltip="Add Leaves" />
+                                                <asp:menuitem navigateurl="Admin_Remaining_Leaves.aspx" text="Leave History" tooltip="Leave History" />
+                                            </asp:menuitem>
+                                            <asp:menuitem navigateurl="Admin_Student.aspx" text="Student" tooltip="Student">
+                                                <asp:menuitem navigateurl="Admin_Student_Add.aspx" text="Add Student" tooltip="Add Student" />
+                                                <asp:menuitem navigateurl="Admin_Student_View.aspx" text="View Student" tooltip="View Student" />
+                                                <asp:menuitem navigateurl="Admin_Allot_Group.aspx" text="Allot Group/Course" tooltip="Allot Group/Course" />
+                                                <asp:menuitem navigateurl="Admin_View_Group.aspx" text="View Group/Course" tooltip="View Group/Course" />
+                                            </asp:menuitem>
+                                            <asp:menuitem navigateurl="Admin_Admin.aspx" text="Admin" tooltip="Admin">
+                                                <asp:menuitem navigateurl="Admin_Admin_Add.aspx" text="Add Admin" tooltip="Add Admin" />
+                                                <asp:menuitem navigateurl="Admin_Admin_Modify.aspx" text="View/modify/Delete Admin" tooltip="View/modify/Delete Admin" />
+                                            </asp:menuitem>
+                                            <asp:menuitem navigateurl="Admin_Department.aspx" text="Departments" tooltip="Departments"></asp:menuitem>
+                                            <asp:menuitem navigateurl="Admin_Courses.aspx" text="Courses" tooltip="Courses"></asp:menuitem>
+                                        </items>
+                                        <StaticHoverStyle BackColor="#2D96FF" ForeColor="White" />
+                                        <StaticMenuItemStyle Font-Size="Medium" HorizontalPadding="5px" VerticalPadding="2px" />
+                                        <StaticSelectedStyle BackColor="#507CD1" Font-Size="Medium" />
+                                    </asp:Menu>
+                                    <cc1:RoundedCornersExtender ID="NavigationMenu_RoundedCornersExtender" runat="server" BehaviorID="NavigationMenu_RoundedCornersExtender" Radius="10" TargetControlID="NavigationMenu" />
+                                </td>
+                                <td>
+                                    <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" OnClick="Button1_Click" Text="Logout" />
+                                </td>
+                            </tr>
+                        </table>
+                    </asp:Panel>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4" colspan="2">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
